@@ -1,7 +1,7 @@
 {
   "name": "paul/review-slider",
   "description": "Shopping world review slider",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "shopware-platform-plugin",
   "license": "proprietary",
   "authors": [
@@ -9,6 +9,9 @@
       "name": "Marc Manusch"
     }
   ],
+  "require": {
+    "shopware/core": "6.5.*"
+  },
   "extra": {
     "shopware-plugin-class": "PaulReviewSlider\\PaulReviewSlider",
     "label": {
