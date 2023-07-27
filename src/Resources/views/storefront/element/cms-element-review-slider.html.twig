@@ -1,0 +1,103 @@
+<div class="cms-element-{{ product-listing }}">
+
+    {% set reviewSliderOptions = {
+        productboxMinWidth: element.config.slideMinWidth.value,
+        slider: {
+            autoplay: element.config.autoplay.value,
+            autoplayButton: false,
+            autoplayButtonOutput: false,
+            controls: element.config.showControls.value,
+            nav: false,
+            gutter: 30,
+            touch: true
+        }
+    } %}
+
+    {% if element.data.items %}
+
+    <div class="base-slider product-slider review-slider{% if element.config.showControls.value %} has-nav-outside{% endif %}" data-product-slider=true data-product-slider-options='{{ reviewSliderOptions|json_encode }}'>
+
+        <div class="review-slider-container pt-2 pb-5" data-product-slider-container="true">
+
+            {% for reviewSliderItem in element.data.items %}
+
+                {% set productId = reviewSliderItem.product.id %}
+
+                <div class="review-slider-item-container">
+
+                    <div class="card review-slider-card shadow-sm">
+
+                        {% if element.config.showImages.value %}
+
+                            {% if reviewSliderItem.product.media %}
+
+                                <a href="{{ seoUrl('frontend.detail.page', {'productId': productId }) }}">
+
+                                    {% sw_thumbnails 'review-slider-image' with {
+                                        media: reviewSliderItem.product.cover.media,
+                                        attributes: {
+                                            'class': 'card-img-top review-slider-image',
+                                            'alt': (reviewSliderItem.product.cover.translated.alt ?: ''),
+                                            'title': (reviewSliderItem.cover.translated.title ?: '')
+                                        }
+                                    } %}
+
+                                </a>
+
+                            {% endif %}
+
+                        {% endif %}
+
+                        <div class="card-body p-5">
+
+                            {% set textHeight = element.config.textHeight.value %}
+                            {% set maxTextLength = element.config.maxTextLength.value %}
+                            {% set productName = reviewSliderItem.product.translated.name %}
+
+                            <blockquote class="blockquote">
+                                <p {% if textHeight %}style="height: {{ textHeight }}"{% endif %}>
+                                    »{{ reviewSliderItem.comment[:maxTextLength] ~ (reviewSliderItem.comment|length > maxTextLength ? '...') }}«
+                                </p>
+                                <footer class="blockquote-footer">
+                                    <cite title="{{ productName }}">
+                                        <a href="{{ seoUrl('frontend.detail.page', {'productId': productId }) }}">
+                                            Zum Produkt
+                                        </a>
+                                    </cite>
+                                </footer>
+                            </blockquote>
+
+                            {% sw_include '@Storefront/storefront/component/review/rating.html.twig' with {
+                                points: reviewSliderItem.points,
+                                style: 'text-primary'
+                            } %}
+
+                        </div>
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% if element.config.showControls.value %}
+
+            <div class="product-slider-controls-container">
+                <div class="base-slider-controls" data-product-slider-controls="true">
+                    <button class="base-slider-controls-prev product-slider-controls-prev" name="review-slider-control-prev">
+                        {% sw_icon 'arrow-head-left' %}
+                    </button>
+                    <button class="base-slider-controls-next product-slider-controls-next" name="review-slider-control-next">
+                        {% sw_icon 'arrow-head-right' %}
+                    </button>
+                </div>
+            </div>
+
+        {% endif %}
+
+    </div>
+
+    {% endif %}
+
+</div>

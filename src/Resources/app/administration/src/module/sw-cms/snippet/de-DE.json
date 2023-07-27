@@ -1,0 +1,28 @@
+{
+  "sw-cms": {
+    "blocks": {
+      "commerce": {
+        "reviewSlider": {
+          "label": "Bewertungen als Slider"
+        }
+      }
+    },
+    "elements": {
+      "reviewSlider": {
+        "label": "Bewertungen als Slider",
+        "config": {
+          "label": {
+            "minRating": "Min. Bewertung",
+            "maxReviews": "Max. Anzahl an Bewertungen",
+            "showImages": "Produktbilder anzeigen",
+            "showControls": "Navigations- Pfeile anzeigen",
+            "autoplay": "Automatisch sliden",
+            "slideMinWidth": "Min. Breite eines Slides",
+            "maxTextLength": "Max. Textlänge der Bewertung",
+            "textHeight": "Max. Höhe des Textbereiches"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "sw-cms": {
+    "blocks": {
+      "commerce": {
+        "reviewSlider": {
+          "label": "Review slider"
+        }
+      }
+    },
+    "elements": {
+      "reviewSlider": {
+        "label": "Review slider",
+        "config": {
+          "label": {
+            "minRating": "Min. rating",
+            "maxReviews": "Max. review count",
+            "showImages": "Show product images",
+            "showControls": "Show navigation arrows",
+            "autoplay": "Autoplay",
+            "slideMinWidth": "Min. slide width",
+            "maxTextLength": "Max. review text length",
+            "textHeight": "Max. text container height"
+          }
+        }
+      }
+    }
+  }
+}

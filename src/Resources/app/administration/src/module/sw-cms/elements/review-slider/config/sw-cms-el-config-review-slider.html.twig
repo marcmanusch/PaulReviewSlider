@@ -1,0 +1,51 @@
+<div class="sw-cms-el-config-review-slider">
+
+    <sw-field class="sw-cms-el-config-review-slider__min-rating"
+              v-model="element.config.minRating.value"
+              type="number"
+              :label="$tc('sw-cms.elements.reviewSlider.config.label.minRating')">
+    </sw-field>
+
+    <sw-field class="sw-cms-el-config-review-slider__max-reviews"
+              v-model="element.config.maxReviews.value"
+              type="number"
+              :label="$tc('sw-cms.elements.reviewSlider.config.label.maxReviews')">
+    </sw-field>
+
+    <sw-field class="sw-cms-el-config-review-slider__show-images"
+              v-model="element.config.showImages.value"
+              type="switch"
+              :label="$tc('sw-cms.elements.reviewSlider.config.label.showImages')">
+    </sw-field>
+
+    <sw-field class="sw-cms-el-config-review-slider__show-controls"
+              v-model="element.config.showControls.value"
+              type="switch"
+              :label="$tc('sw-cms.elements.reviewSlider.config.label.showControls')">
+    </sw-field>
+
+    <sw-field class="sw-cms-el-config-review-slider__autoplay"
+              v-model="element.config.autoplay.value"
+              type="switch"
+              :label="$tc('sw-cms.elements.reviewSlider.config.label.autoplay')">
+    </sw-field>
+
+    <sw-field class="sw-cms-el-config-review-slider__slide-min-width"
+              v-model="element.config.slideMinWidth.value"
+              type="text"
+              :label="$tc('sw-cms.elements.reviewSlider.config.label.slideMinWidth')">
+    </sw-field>
+
+    <sw-field class="sw-cms-el-config-review-slider__max-text-length"
+              v-model="element.config.maxTextLength.value"
+              type="number"
+              :label="$tc('sw-cms.elements.reviewSlider.config.label.maxTextLength')">
+    </sw-field>
+
+    <sw-field class="sw-cms-el-config-review-slider__text-height"
+              v-model="element.config.textHeight.value"
+              type="text"
+              :label="$tc('sw-cms.elements.reviewSlider.config.label.textHeight')">
+    </sw-field>
+
+</div>
